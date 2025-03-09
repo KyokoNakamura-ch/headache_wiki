@@ -1308,16 +1308,33 @@
 
 <h1 id="wiki">頭痛Wiki（β版）</h1>
 <h2 id="_1">お悩みの内容を選んでください</h2>
-<p><label for="headache-select">頭痛の種類</label>
-<select id="headache-select" onchange="navigateToPage(this.value)">
-    <option value="">選択してください</option>
-    <option value="./headache_types/migraine">ズキズキする痛み、光や音に敏感になる（片頭痛）</option>
-    <option value="./headache_types/tension_headache">肩こりやストレスで起こる、締め付けられるような痛み（緊張型頭痛）</option>
-    <option value="./headache_types/cluster_headache">目の奥がえぐられるような激しい痛み（群発頭痛）</option>
-    <option value="./headache_types/sinus_headache">鼻づまりや風邪のあとに起こる頭痛（副鼻腔炎頭痛）</option>
-    <option value="./headache_types/cervicogenic_headache">首や肩のこりからくる頭痛（頚性頭痛）</option>
-    <option value="./headache_types/rebound_headache">頭痛薬の飲みすぎで逆に悪化する頭痛（薬剤乱用頭痛）</option>
-</select></p>
+<p><input type="text" id="search-box" placeholder="キーワードで検索..." oninput="searchSite()" style="width: 100%; padding: 8px; margin-bottom: 10px;"></p>
+<p><select id="headache-select" onchange="navigateToPage(this.value)">
+    <option value="">選択してください</option></p>
+<pre><code>&lt;!-- 頭痛の種類 --&gt;
+&lt;option value="./headache_types/migraine"&gt;ズキズキする痛み、光や音に敏感になる（片頭痛）&lt;/option&gt;
+&lt;option value="./headache_types/tension_headache"&gt;肩こりやストレスで起こる、締め付けられるような痛み（緊張型頭痛）&lt;/option&gt;
+&lt;option value="./headache_types/cluster_headache"&gt;目の奥がえぐられるような激しい痛み（群発頭痛）&lt;/option&gt;
+&lt;option value="./headache_types/sinus_headache"&gt;鼻づまりや風邪のあとに起こる頭痛（副鼻腔炎頭痛）&lt;/option&gt;
+&lt;option value="./headache_types/cervicogenic_headache"&gt;首や肩のこりからくる頭痛（頚性頭痛）&lt;/option&gt;
+&lt;option value="./headache_types/rebound_headache"&gt;頭痛薬の飲みすぎで逆に悪化する頭痛（薬剤乱用頭痛）&lt;/option&gt;
+
+&lt;!-- 症状・原因 --&gt;
+&lt;option value="./symptoms/headache_forehead"&gt;おでこや額が痛む（ひたいの痛み）&lt;/option&gt;
+&lt;option value="./symptoms/headache_around_eyes"&gt;目の奥がズーンと痛む（目の奥の痛み）&lt;/option&gt;
+&lt;option value="./symptoms/headache_temporal"&gt;こめかみがズキズキする（こめかみの痛み）&lt;/option&gt;
+&lt;option value="./symptoms/headache_full"&gt;頭全体が締め付けられるような痛み（頭全体の痛み）&lt;/option&gt;
+&lt;option value="./symptoms/headache_nausea"&gt;吐き気を伴う頭痛（吐き気を伴う頭痛）&lt;/option&gt;
+&lt;option value="./symptoms/headache_pressure"&gt;気圧が下がると起こる頭痛（気圧による頭痛）&lt;/option&gt;
+&lt;option value="./symptoms/headache_back"&gt;後頭部がズキズキする（後頭部の痛み）&lt;/option&gt;
+&lt;option value="./symptoms/headache_morning"&gt;朝起きたときに痛みが強い（朝起きたときの頭痛）&lt;/option&gt;
+&lt;option value="./symptoms/headache_exertional"&gt;運動すると悪化する（運動後に悪化する頭痛）&lt;/option&gt;
+
+&lt;!-- 専門医・病院 --&gt;
+&lt;option value="./doctors/find_doctor"&gt;頭痛外来・脳神経内科の探し方&lt;/option&gt;
+&lt;option value="./doctors/online_headache"&gt;オンライン頭痛診療&lt;/option&gt;
+</code></pre>
+<p></select></p>
 <p>お探しの情報が見つからない場合は、<a href="./inquiry">お問い合わせ</a>ください。</p>
 
 <p><a href="./about">このWikiについて</a> | <a href="./guide">使い方ガイド</a></p>
@@ -1326,6 +1343,14 @@
 function navigateToPage(url) {
     if (url) {
         window.location.href = url;
+    }
+}
+
+// MkDocs Material の検索機能をトリガー
+function searchSite() {
+    var query = document.getElementById("search-box").value;
+    if (query.length > 2) { // 3文字以上入力されたら検索実行
+        window.location.href = "/headache_wiki/?q=" + encodeURIComponent(query);
     }
 }
 </script>
