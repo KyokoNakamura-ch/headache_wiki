@@ -243,6 +243,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="お悩みの内容を選んでください">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 頭痛の種類
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 症状・原因
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 専門医・病院
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1288,6 +1321,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="お悩みの内容を選んでください">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 頭痛の種類
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 症状・原因
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 専門医・病院
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1308,33 +1374,35 @@
 
 <h1 id="wiki">頭痛Wiki（β版）</h1>
 <h2 id="_1">お悩みの内容を選んでください</h2>
-<p><input type="text" id="search-box" placeholder="キーワードで検索..." oninput="searchSite()" style="width: 100%; padding: 8px; margin-bottom: 10px;"></p>
-<p><select id="headache-select" onchange="navigateToPage(this.value)">
-    <option value="">選択してください</option></p>
-<pre><code>&lt;!-- 頭痛の種類 --&gt;
-&lt;option value="./headache_types/migraine"&gt;ズキズキする痛み、光や音に敏感になる（片頭痛）&lt;/option&gt;
-&lt;option value="./headache_types/tension_headache"&gt;肩こりやストレスで起こる、締め付けられるような痛み（緊張型頭痛）&lt;/option&gt;
-&lt;option value="./headache_types/cluster_headache"&gt;目の奥がえぐられるような激しい痛み（群発頭痛）&lt;/option&gt;
-&lt;option value="./headache_types/sinus_headache"&gt;鼻づまりや風邪のあとに起こる頭痛（副鼻腔炎頭痛）&lt;/option&gt;
-&lt;option value="./headache_types/cervicogenic_headache"&gt;首や肩のこりからくる頭痛（頚性頭痛）&lt;/option&gt;
-&lt;option value="./headache_types/rebound_headache"&gt;頭痛薬の飲みすぎで逆に悪化する頭痛（薬剤乱用頭痛）&lt;/option&gt;
-
-&lt;!-- 症状・原因 --&gt;
-&lt;option value="./symptoms/headache_forehead"&gt;おでこや額が痛む（ひたいの痛み）&lt;/option&gt;
-&lt;option value="./symptoms/headache_around_eyes"&gt;目の奥がズーンと痛む（目の奥の痛み）&lt;/option&gt;
-&lt;option value="./symptoms/headache_temporal"&gt;こめかみがズキズキする（こめかみの痛み）&lt;/option&gt;
-&lt;option value="./symptoms/headache_full"&gt;頭全体が締め付けられるような痛み（頭全体の痛み）&lt;/option&gt;
-&lt;option value="./symptoms/headache_nausea"&gt;吐き気を伴う頭痛（吐き気を伴う頭痛）&lt;/option&gt;
-&lt;option value="./symptoms/headache_pressure"&gt;気圧が下がると起こる頭痛（気圧による頭痛）&lt;/option&gt;
-&lt;option value="./symptoms/headache_back"&gt;後頭部がズキズキする（後頭部の痛み）&lt;/option&gt;
-&lt;option value="./symptoms/headache_morning"&gt;朝起きたときに痛みが強い（朝起きたときの頭痛）&lt;/option&gt;
-&lt;option value="./symptoms/headache_exertional"&gt;運動すると悪化する（運動後に悪化する頭痛）&lt;/option&gt;
-
-&lt;!-- 専門医・病院 --&gt;
-&lt;option value="./doctors/find_doctor"&gt;頭痛外来・脳神経内科の探し方&lt;/option&gt;
-&lt;option value="./doctors/online_headache"&gt;オンライン頭痛診療&lt;/option&gt;
-</code></pre>
-<p></select></p>
+<h3 id="_2">🟢 頭痛の種類</h3>
+<p><select id="headache-type" onchange="navigateToPage(this.value)">
+    <option value="">選択してください</option>
+    <option value="./headache_types/migraine">片頭痛（ズキズキする痛み）</option>
+    <option value="./headache_types/tension_headache">緊張型頭痛（締め付けるような痛み）</option>
+    <option value="./headache_types/cluster_headache">群発頭痛（目の奥がえぐられるような痛み）</option>
+    <option value="./headache_types/sinus_headache">副鼻腔炎頭痛（鼻づまり・副鼻腔の炎症による痛み）</option>
+    <option value="./headache_types/cervicogenic_headache">頚性頭痛（首のコリや神経圧迫による痛み）</option>
+    <option value="./headache_types/rebound_headache">薬剤乱用頭痛（頭痛薬の飲みすぎによる頭痛）</option>
+</select></p>
+<h3 id="_3">🟢 症状・原因</h3>
+<p><select id="headache-symptoms" onchange="navigateToPage(this.value)">
+    <option value="">選択してください</option>
+    <option value="./symptoms/headache_forehead">ひたいの痛み（おでこや額が痛む）</option>
+    <option value="./symptoms/headache_around_eyes">目の奥の痛み（目の奥がズーンと痛む）</option>
+    <option value="./symptoms/headache_temporal">こめかみの痛み（こめかみがズキズキする）</option>
+    <option value="./symptoms/headache_full">頭全体が締め付けられる頭痛（ヘルメットをかぶったような痛み）</option>
+    <option value="./symptoms/headache_nausea">吐き気を伴う頭痛（気持ち悪さ・嘔吐がある）</option>
+    <option value="./symptoms/headache_pressure">気圧による頭痛（気象病・台風で悪化）</option>
+    <option value="./symptoms/headache_back">後頭部の痛み（首の付け根や後頭部が痛む）</option>
+    <option value="./symptoms/headache_morning">朝起きたときに強くなる頭痛（睡眠不足・低血圧・脱水）</option>
+    <option value="./symptoms/headache_exertional">運動後に悪化する頭痛（ジョギング・筋トレ後にズキズキ）</option>
+</select></p>
+<h3 id="_4">🟢 専門医・病院</h3>
+<p><select id="doctor-select" onchange="navigateToPage(this.value)">
+    <option value="">選択してください</option>
+    <option value="./doctors/find_doctor">頭痛外来・脳神経内科の探し方</option>
+    <option value="./doctors/online_headache">オンライン頭痛診療</option>
+</select></p>
 <p>お探しの情報が見つからない場合は、<a href="./inquiry">お問い合わせ</a>ください。</p>
 
 <p><a href="./about">このWikiについて</a> | <a href="./guide">使い方ガイド</a></p>
@@ -1343,14 +1411,6 @@
 function navigateToPage(url) {
     if (url) {
         window.location.href = url;
-    }
-}
-
-// MkDocs Material の検索機能をトリガー
-function searchSite() {
-    var query = document.getElementById("search-box").value;
-    if (query.length > 2) { // 3文字以上入力されたら検索実行
-        window.location.href = "/headache_wiki/?q=" + encodeURIComponent(query);
     }
 }
 </script>
