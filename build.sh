@@ -1,32 +1,27 @@
 #!/bin/bash
 
-# 環境の Python の確認
-echo "Checking Python version..."
-which python3 || echo "Python3 not found"
-python3 --version || echo "Python3 version not found"
+echo "BUILD START"
 
-# Python 仮想環境の作成
-echo "Creating virtual environment..."
+# 仮想環境の作成（venv）
 python3 -m venv venv
-source venv/bin/activate  # Linux/Macの場合
-# source venv/Scripts/activate  # Windowsの場合（VercelはLinux環境なので上はOK）
 
-# pip のインストールとアップグレード
-echo "Ensuring pip is installed..."
-python3 -m ensurepip --default-pip
-python3 -m pip install --upgrade pip || echo "Pip installation failed"
+# 仮想環境の有効化
+source venv/bin/activate  # Linux環境（Vercel）はこれでOK
 
-# pip が使えるか確認
-python3 -m pip --version || echo "Pip is still not found"
+# pip のアップグレード
+pip install --upgrade pip
 
-# 依存関係のインストール（仮想環境内で）
-python3 -m pip install -r requirements.txt || echo "Dependency installation failed"
+# 依存関係のインストール
+pip install -r requirements.txt
 
-# MkDocs のビルド（仮想環境内で）
-python3 -m mkdocs build || echo "MkDocs build failed"
+# MkDocs のビルド
+mkdocs build
 
 # 仮想環境の終了
 deactivate
+
+echo "BUILD END"
+
 
 
 
