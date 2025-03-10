@@ -1,6 +1,15 @@
-site_name: 頭痛Wiki (β版)
+site_name: "頭痛Wiki(β版) - 薬剤師が監修する頭痛情報サイト"
 theme:
-  name: material
+  name: "material"  # 使用しているテーマによる
+extra:
+  meta:
+    description: "薬剤師が監修する頭痛Wiki。片頭痛・群発頭痛・緊張型頭痛・薬剤性頭痛の原因や治療法を解説。"
+    keywords: "頭痛, 片頭痛, 群発頭痛, 緊張型頭痛, 頭痛治療"
+
+  analytics:
+    provider: google
+    property: "G-TTESRDLEC6"  # あなたのGoogle Analytics IDに置き換え
+
 nav:
   - ホーム: index.md
   - このサイトについて: about.md

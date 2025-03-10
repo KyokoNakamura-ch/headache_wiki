@@ -1,46 +1,43 @@
-# 🏠 頭痛Wikiへようこそ
+# 頭痛Wiki（β版）
 
-このサイトは、一般の方に向け、頭痛に関する正確で信頼できる情報をわかりやすく提供することを目指しています。
+## お悩みの内容を選んでください
 
-## 🔹 例えば、こんなことが調べられます
+### 🟢 頭痛の傾向を知る
+あなたの頭痛を知ることで、頭痛を楽にしたくないですか？
 
-### 🏥 頭痛の種類
-- 片頭痛ってどんな病気？ → [片頭痛](headache_types/migraine.md)
-- 頭全体が締め付けられるように痛い…これは？ → [緊張型頭痛](headache_types/tension_headache.md)
+👉 [あなたの頭痛の傾向をチェックする](./headache_test.html)
 
-### 🤕 症状・原因
-- 目の奥が痛いけど、何が原因？ → [目の奥の痛み](symptoms/headache_around_eyes.md)
-- 朝起きたら頭が痛い…原因は？ → [朝起きたときに強くなる頭痛](symptoms/headache_morning.md)
+### 🟢 症状・原因
+あなたの頭痛の症状や原因を知ることで、適切な対処法が見つかるかもしれません。
 
-### 💊 治療法
-- 頭痛薬ってどれを選べばいいの？ → [市販薬（OTC）](treatment/otc.md)
-- 頭痛を予防する方法ってある？ → [生活習慣改善](treatment/lifestyle.md)
+<select id="headache-symptoms" onchange="navigateToPage(this.value)">
+    <option value="">選択してください</option>
+    <option value="./symptoms/headache_forehead">ひたいの痛み（おでこや額が痛む）</option>
+    <option value="./symptoms/headache_around_eyes">目の奥の痛み（目の奥がズーンと痛む）</option>
+    <option value="./symptoms/headache_temporal">こめかみの痛み（こめかみがズキズキする）</option>
+    <option value="./symptoms/headache_full">頭全体が締め付けられる頭痛（ヘルメットをかぶったような痛み）</option>
+    <option value="./symptoms/headache_nausea">吐き気を伴う頭痛（気持ち悪さ・嘔吐がある）</option>
+    <option value="./symptoms/headache_pressure">気圧による頭痛（気象病・台風で悪化）</option>
+    <option value="./symptoms/headache_back">後頭部の痛み（首の付け根や後頭部が痛む）</option>
+    <option value="./symptoms/headache_morning">朝起きたときに強くなる頭痛（睡眠不足・低血圧・脱水）</option>
+    <option value="./symptoms/headache_exertional">運動後に悪化する頭痛（ジョギング・筋トレ後にズキズキ）</option>
+</select>
 
-### 🏥 専門医・病院
-- 頭痛に詳しい病院にかかりたいけど、どう探せばいいの？<br>
-    → [頭痛外来・脳神経内科の探し方](doctors/find_doctor.md)
-- オンラインで頭痛相談できる？ → [オンライン頭痛診療](doctors/online_headache.md)
+### 🟢 専門医・病院
+<select id="doctor-select" onchange="navigateToPage(this.value)">
+    <option value="">選択してください</option>
+    <option value="./doctors/find_doctor">頭痛外来・脳神経内科の探し方</option>
+    <option value="./doctors/online_headache">オンライン頭痛診療</option>
+</select>
 
-### 📰 最新ニュース・情報
-- 最新の頭痛治療やニュースを知りたい！ → [頭痛関連ニュース（準備中）](news.md)
-- 科学的に正しい治療って？ → [ガイドライン](research/guidelines.md)
+<p>お探しの情報が見つからない場合は、<a href="./inquiry">お問い合わせ</a>ください。</p>
 
-### 📩 お問い合わせ
-- ご意見・ご質問はこちら → [お問合せ](inquiry.md)
+<p><a href="./about">このWikiについて</a> | <a href="./guide">使い方ガイド</a></p>
 
----
-
-## 💡 このサイトの特徴
-
-✅ **信頼できる情報** → 日本頭痛学会のガイドラインや最新の研究を参考に作成<br>
-✅ **分かりやすい解説** <br>
-    → 症状ごとの特徴を整理し、セルフチェックで原因の可能性を確認<br>
-    → 専門的な内容をできるだけ平易に説明<br>
-✅ **受診のサポート** → 受診を検討している方に向けた情報も提供<br>
-
-📌 **このサイトは随時更新中です。新しい情報を追加していきますので、定期的にチェックしてください！**
-
----
-📌 ©2025 頭痛Wiki. 無断転載を禁じます。
-
-
+<script>
+function navigateToPage(url) {
+    if (url) {
+        window.location.href = url;
+    }
+}
+</script>

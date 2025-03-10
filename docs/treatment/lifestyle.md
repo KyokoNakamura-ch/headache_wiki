@@ -66,7 +66,7 @@ American Headache Societyによる研究では、マグネシウム補充が片�
 - ICHD-3（国際頭痛分類）
 - PMDA 添付文書 👉 [PMDA添付文書検索](https://www.pmda.go.jp/PmdaSearch/iyakuSearch/)
 
-👉 [認知行動療法はこちら](cognitive_behavioral.md)
+👉 [認知行動療法はこちら](cbt.md)
 
 ---
 📌 ©2025 頭痛Wiki. 無断転載を禁じます。

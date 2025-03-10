@@ -1,8 +1,6 @@
 # 📩 お問い合わせ
 
-このサイトに関するご質問・ご意見・ご相談は、以下のフォームよりお寄せください。
-
-🔗 **[Googleフォームでお問い合わせ](https://forms.gle/XXXXX)**
+🔗 **[Googleフォームでお問い合わせ](https://docs.google.com/forms/d/e/1FAIpQLSeykasgghbU6CaglFJGeyQfGcNs0m3DIrI95XBHTV98c8LG1Q/viewform?usp=header)**
 
 ## 🔹 お問い合わせ内容
 
