@@ -1,15 +1,9 @@
 #!/bin/bash
 
-# 環境変数を確認
+# Python のパスを確認
 echo "Checking Python version..."
 which python3 || echo "Python3 not found"
 python3 --version || echo "Python3 version not found"
-
-# Python が見つからなかった場合の対策
-if ! command -v python3 &>/dev/null; then
-    echo "Python3 not found, trying to install..."
-    apt-get update && apt-get install -y python3 python3-pip
-fi
 
 # pip のインストールとアップグレード
 echo "Ensuring pip is installed..."
