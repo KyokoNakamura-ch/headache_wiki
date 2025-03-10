@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>頭痛の傾向を知る</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        form { background: #f9f9f9; padding: 15px; border-radius: 8px; }
+        button { background: #6c757d; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #5a6268; }
+        .disclaimer { font-size: 0.9em; color: #555; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>頭痛の傾向を知る</h2>
+<p>あなたの頭痛を知ることで、頭痛を楽にしたくないですか？</p>
+<p class="disclaimer">このチェックは医学的な診断ではなく、頭痛の傾向を知るためのものです。気になる症状がある場合は専門医にご相談ください。</p>
+
+<form id="headacheForm">
+    <p>1. 頭痛が起こる頻度は？</p>
+    <input type="radio" name="freq" value="low"> 月に1回以下<br>
+    <input type="radio" name="freq" value="mid"> 月に2～4回<br>
+    <input type="radio" name="freq" value="high"> 週に1回以上<br>
+    <input type="radio" name="freq" value="daily"> ほぼ毎日<br>
+
+    <p>2. 頭痛の痛み方は？</p>
+    <input type="radio" name="pain" value="migraine"> ズキズキと脈打つような痛み<br>
+    <input type="radio" name="pain" value="tension"> 頭全体が締め付けられるような痛み<br>
+    <input type="radio" name="pain" value="cluster"> 片側の目の奥がえぐられるような激痛<br>
+
+    <p>3. 頭痛が起こる前にこんな症状はある？</p>
+    <input type="checkbox" name="symptom" value="aura"> 視界がチカチカする<br>
+    <input type="checkbox" name="symptom" value="fatigue"> 体がだるくなる<br>
+    <input type="checkbox" name="symptom" value="focus"> 集中力が落ちる<br>
+
+    <p>4. 頭痛があるとき、薬はどうしてる？</p>
+    <input type="radio" name="medicine" value="none"> 飲まない<br>
+    <input type="radio" name="medicine" value="occasional"> 月に数回飲む<br>
+    <input type="radio" name="medicine" value="frequent"> 週に数回飲む<br>
+    <input type="radio" name="medicine" value="daily"> 毎日のように飲んでいる<br>
+
+    <button type="button" onclick="getResult()" style="margin-top: 10px;">結果を見る</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    function getResult() {
+        let scores = { migraine: 0, tension: 0, cluster: 0, medicationOveruse: 0 };
+
+        let freq = document.querySelector('input[name="freq"]:checked')?.value;
+        if (freq === "daily") scores.medicationOveruse += 2;
+        if (freq === "high") scores.migraine += 2;
+        if (freq === "mid") scores.tension += 1;
+
+        let pain = document.querySelector('input[name="pain"]:checked')?.value;
+        if (pain === "migraine") scores.migraine += 3;
+        if (pain === "tension") scores.tension += 3;
+        if (pain === "cluster") scores.cluster += 3;
+
+        let symptoms = document.querySelectorAll('input[name="symptom"]:checked');
+        symptoms.forEach(symptom => {
+            if (symptom.value === "aura") scores.migraine += 2;
+            if (symptom.value === "fatigue") scores.tension += 1;
+            if (symptom.value === "focus") scores.migraine += 1;
+        });
+
+        let medicine = document.querySelector('input[name="medicine"]:checked')?.value;
+        if (medicine === "daily") scores.medicationOveruse += 3;
+        if (medicine === "frequent") scores.migraine += 1;
+
+        let maxScore = Math.max(...Object.values(scores));
+        let headacheType = Object.keys(scores).filter(type => scores[type] === maxScore);
+
+        let resultText = "<strong>あなたの頭痛の特徴に近いものは：</strong><br>";
+        if (headacheType.includes("migraine")) resultText += "<a href='./headache_types/migraine'>片頭痛</a><br>";
+        if (headacheType.includes("tension")) resultText += "<a href='./headache_types/tension_headache'>緊張型頭痛</a><br>";
+        if (headacheType.includes("cluster")) resultText += "<a href='./headache_types/cluster_headache'>群発頭痛</a><br>";
+        if (headacheType.includes("medicationOveruse")) resultText += "<a href='./headache_types/rebound_headache'>薬物乱用頭痛</a><br>";
+
+        if (headacheType.length > 1) {
+            resultText += "<br>あなたの頭痛は複数のタイプが混ざっている可能性があります。";
+        }
+
+        document.getElementById("result").innerHTML = resultText;
+    }
+
+    window.getResult = getResult;
+});
+</script>
+
+</body>
+</html>
