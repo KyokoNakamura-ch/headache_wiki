@@ -3,6 +3,6 @@
     "env": {
       "PYTHON_VERSION": "3.9"
     },
-    "buildCommand": "python3 -m pip install -r requirements.txt && python3 -m mkdocs build"
+    "buildCommand": "npm run vercel-build"
   }
 }
