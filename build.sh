@@ -1,4 +1,10 @@
-#!/bin/sh
-apt-get update && apt-get install -y python3 python3-pip
+#!/bin/bash
+
+# Ensure pip is installed and upgraded
+python3 -m pip install --upgrade pip
+
+# Install dependencies
 pip3 install -r requirements.txt
+
+# Build the site
 mkdocs build
