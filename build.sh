@@ -13,7 +13,7 @@ python3 -m pip install --upgrade pip || echo "Pip installation failed"
 # pip が使えるか確認
 python3 -m pip --version || echo "Pip is still not found"
 
-# 依存関係のインストール（pip → python3 -m pip に変更）
+# 依存関係のインストール
 python3 -m pip install -r requirements.txt || echo "Dependency installation failed"
 
 # MkDocs のビルド
