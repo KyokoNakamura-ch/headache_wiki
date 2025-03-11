@@ -1,0 +1,36 @@
+/* 背景色をクリーム色系に */
+body {
+    background-color: #f7f5f2; /* やわらかいアイボリー */
+    color: #444; /* 真っ黒ではなくダークグレー */
+}
+
+/* ヘッダーの色を落ち着いたブルーに */
+.md-header {
+    background-color: #4a6484; /* 目に優しい暗めのブルー */
+}
+
+/* リンクの色を少し抑える */
+a {
+    color: #556b8c; /* ちょっとグレー寄りのブルー */
+}
+
+a:hover {
+    color: #2e4b6b; /* マウスホバー時も落ち着いた色 */
+}
+
+/* サイドメニューの色を調整 */
+.md-sidebar {
+    background-color: #eef0f3; /* 明るめのグレー */
+}
+
+/* サイトのタイトルのフォントサイズを調整 */
+.md-header__title {
+    font-size: 20px; /* 小さめに */
+    font-weight: 500; /* 太すぎず、読みやすい */
+}
+
+/* サブタイトル（薬剤師が監修する～）のフォントをさらに小さく */
+.md-header__title span {
+    font-size: 16px; /* サイト名より小さく */
+    font-weight: 400; /* 普通の太さ */
+}
