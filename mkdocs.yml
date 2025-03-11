@@ -12,7 +12,7 @@ extra:
 
 nav:
   - ホーム: index.md
-  - このサイトについて: about.md
+  - 頭痛Wikiについて: about.md
   - 頭痛の種類:
       - 片頭痛: headache_types/migraine.md
       - 緊張型頭痛: headache_types/tension_headache.md
