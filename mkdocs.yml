@@ -10,7 +10,7 @@ extra:
     provider: google
     property: "G-TTESRDLEC6"  # あなたのGoogle Analytics IDに置き換え
 extra_css:
-  - docs/extra.css
+  - extra.css
 nav:
   - ホーム: index.md
   - 頭痛Wikiについて: about.md
