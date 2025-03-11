@@ -87,3 +87,9 @@ body {
 .md-sidebar--secondary .md-nav__link .icon {
     color: #4CAF50 !important; /* 目次のアイコンも同じ色に */
 }
+
+/* サイドバーのホバー時の色を落ち着いたグリーンに */
+.md-sidebar__inner .md-nav__link:hover {
+    color: #2C5B33 !important;  /* 現在より少し落ち着いた緑 */
+    background-color: #E0F2E9 !important; /* 優しいグリーンの背景 */
+}
