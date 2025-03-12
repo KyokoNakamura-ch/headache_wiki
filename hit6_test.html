@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIT-6 頭痛評価テスト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #eef;
+            border-radius: 5px;
+        }
+        .highlight {
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>HIT-6 頭痛評価テスト</h1>
+    
+    <div class="info">
+        <h2>あなたの頭痛、大丈夫？</h2>
+        <p>頭痛が続くと、仕事や日常生活に影響が出ることも…！HIT-6テストで、あなたの頭痛がどのくらい日常に影響しているかをチェックしましょう！</p>
+    </div>
+    
+    <form id="hit6Form">
+        <div class="question">
+            <p>1. 頭が痛いとき、ひどい痛みが出るのはどれくらいの頻度ですか？</p>
+            <label><input type="radio" name="q1" value="6"> まったくない</label>
+            <label><input type="radio" name="q1" value="8"> めったにない</label>
+            <label><input type="radio" name="q1" value="10"> ときどきある</label>
+            <label><input type="radio" name="q1" value="11"> よくある</label>
+            <label><input type="radio" name="q1" value="13"> 常にある</label>
+        </div>
+        <div class="question">
+            <p>2. 頭痛のせいで、日常生活に支障が出ることがありますか？（例えば、家事、仕事、学校生活、人付き合いなど）</p>
+            <label><input type="radio" name="q2" value="6"> まったくない</label>
+            <label><input type="radio" name="q2" value="8"> めったにない</label>
+            <label><input type="radio" name="q2" value="10"> ときどきある</label>
+            <label><input type="radio" name="q2" value="11"> よくある</label>
+            <label><input type="radio" name="q2" value="13"> 常にある</label>
+        </div>
+        <div class="question">
+            <p>3. 頭が痛いとき、横になりたくなることがありますか？</p>
+            <label><input type="radio" name="q3" value="6"> まったくない</label>
+            <label><input type="radio" name="q3" value="8"> めったにない</label>
+            <label><input type="radio" name="q3" value="10"> ときどきある</label>
+            <label><input type="radio" name="q3" value="11"> よくある</label>
+            <label><input type="radio" name="q3" value="13"> 常にある</label>
+        </div>
+        <div class="question">
+            <p>4. この4週間に、頭痛のせいで疲れてしまって、仕事やいつもの活動ができないことがありましたか？</p>
+            <label><input type="radio" name="q4" value="6"> まったくない</label>
+            <label><input type="radio" name="q4" value="8"> めったにない</label>
+            <label><input type="radio" name="q4" value="10"> ときどきある</label>
+            <label><input type="radio" name="q4" value="11"> よくある</label>
+            <label><input type="radio" name="q4" value="13"> 常にある</label>
+        </div>
+        <div class="question">
+            <p>5. この4週間に、頭痛のせいで、うんざりしたりいらいらしたりしたことがありましたか？</p>
+            <label><input type="radio" name="q5" value="6"> まったくない</label>
+            <label><input type="radio" name="q5" value="8"> めったにない</label>
+            <label><input type="radio" name="q5" value="10"> ときどきある</label>
+            <label><input type="radio" name="q5" value="11"> よくある</label>
+            <label><input type="radio" name="q5" value="13"> 常にある</label>
+        </div>
+        <div class="question">
+            <p>6. この4週間に、頭痛のせいで、仕事や日常生活の場で集中できないことがありましたか？</p>
+            <label><input type="radio" name="q6" value="6"> まったくない</label>
+            <label><input type="radio" name="q6" value="8"> めったにない</label>
+            <label><input type="radio" name="q6" value="10"> ときどきある</label>
+            <label><input type="radio" name="q6" value="11"> よくある</label>
+            <label><input type="radio" name="q6" value="13"> 常にある</label>
+        </div>
+        <button type="button" onclick="calculateHIT6()">測定する</button>
+    </form>
+            
+            <div id="result" class="result" style="display:none;"></div>
+            
+            <script>
+                function calculateHIT6() {
+                    let totalScore = 0;
+                    let allAnswered = true;
+                    
+                    for (let i = 1; i <= 6; i++) {
+                        const selected = document.querySelector(`input[name=q${i}]:checked`);
+                        if (selected) {
+                            totalScore += parseInt(selected.value);
+                        } else {
+                            allAnswered = false;
+                        }
+                    }
+                    
+                    if (!allAnswered) {
+                        alert("すべての質問に回答してください！");
+                        return;
+                    }
+                    
+                    let message = "";
+                    if (totalScore >= 60) {
+                        message = "重大な影響があります。専門医の受診を検討しましょう。";
+                    } else if (totalScore >= 56) {
+                        message = "かなりの影響があります。適切なケアを心がけましょう。";
+                    } else if (totalScore >= 50) {
+                        message = "中程度の影響があります。適切な対策を取りましょう。";
+                    } else {
+                        message = "生活習慣の見直しをおすすめします。";
+                    }
+                    
+                    document.getElementById("result").innerHTML = `<h2>HIT-6 スコア: ${totalScore}</h2><p>${message}</p>`;
+                    document.getElementById("result").style.display = "block";
+                }
+            </script>
+
+    <table id="scoreTable" style="display:none;">
+        <tr>
+            <th>スコア範囲</th>
+            <th>診断結果</th>
+        </tr>
+        <tr>
+            <td>60以上</td>
+            <td>頭痛が生活に大きな影響を与えています。専門医への相談をおすすめします。</td>
+        </tr>
+        <tr>
+            <td>56〜59</td>
+            <td>頭痛が頻繁に生活を妨げています。医師に相談し、適切なケアを検討しましょう。</td>
+        </tr>
+        <tr>
+            <td>50〜55</td>
+            <td>中程度の影響があります。次回診察時に医師と相談しましょう。</td>
+        </tr>
+        <tr>
+            <td>49以下</td>
+            <td>今のところ大きな問題はありませんが、定期的なチェックをおすすめします。</td>
+        </tr>
+    </table>
+        </body>
+        </html>
+        
