@@ -75,11 +75,25 @@ body {
     border: none !important;
 }
 
-/* 🟢 アイコンの色を目に優しい緑に変更 */
-.md-nav__link::before,
-.md-nav__link .icon,
-.md-nav__link span.icon {
-    color: #4CAF50 !important; /* 落ち着いたグリーン */
+/* 🟢 緑のドットの色を #A8D5BA に */
+.green-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #A8D5BA;  /* 淡い緑に変更 */
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.new-dot {
+    display: inline-block;
+    width: 14px;  /* 12px → 14px で見やすく */
+    height: 14px;
+    background-color: #A8D5BA !important;  /* 優しいグリーン */
+    border-radius: 50%;
+    margin-right: 10px; /* 余白を増やしてテキストとのバランスを取る */
+    vertical-align: middle;
 }
 
 /* 目次（Table of Contents）のアイコンも変更 */

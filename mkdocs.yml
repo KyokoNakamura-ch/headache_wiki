@@ -1,6 +1,8 @@
 site_name: "頭痛Wiki(β版) - 薬剤師が監修する頭痛情報サイト"
+
 theme:
-  name: "material"  # 使用しているテーマによる
+  name: "material"  # 使用しているテーマ
+
 extra:
   meta:
     description: "薬剤師が監修する頭痛Wiki。片頭痛・群発頭痛・緊張型頭痛・薬剤性頭痛の原因や治療法を解説。"
@@ -53,5 +55,7 @@ nav:
   - 頭痛関連ニュース（準備中）: news.md
   - よくある質問: faq.md
   - お問合せ: inquiry.md
+extra_javascript:
+  - extra.js
 
 
