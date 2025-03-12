@@ -44,6 +44,7 @@ nav:
       - 🔴 緊急受診が必要な頭痛: dangerous_headache/emergency.md
       - ⚠ 早めの受診が推奨される頭痛: dangerous_headache/non_emergency.md
   - 専門医・病院:
+      - 専門病院への受診: doctors/when_to_see_specialist.md
       - 頭痛外来・脳神経内科の探し方: doctors/find_doctor.md
       - オンライン頭痛診療: doctors/online_headache.md
   - 研究・エビデンス:
