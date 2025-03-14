@@ -21,6 +21,7 @@
     <option value="./symptoms/headache_back">後頭部の痛み（首の付け根や後頭部が痛む）</option>
     <option value="./symptoms/headache_morning">朝起きたときに強くなる頭痛（睡眠不足・低血圧・脱水）</option>
     <option value="./symptoms/headache_exertional">運動後に悪化する頭痛（ジョギング・筋トレ後にズキズキ）</option>
+    <option value="./symptoms/coffee_headache">コーヒーによる頭痛（飲みすぎ・急にやめると痛む）</option>
 </select>
 
 ### <span class="new-dot"></span> 専門医・病院
