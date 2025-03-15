@@ -1,12 +1,12 @@
 /* 背景色をクリーム色系に */
 body {
-    background-color: #f7f5f2; /* やわらかいアイボリー */
-    color: #444; /* 真っ黒ではなくダークグレー */
+    background-color: #F4FBF9 !important; /* ほぼ白に近い優しいグリーン */
+    color: #333 !important; /* 文字を濃いめにして可読性UP */
 }
 
 /* ヘッダーの色を落ち着いたグリーンに */
 .md-header {
-    background-color: #7ABF80 !important; /* 優しさと視認性を両立したグリーン */
+    background-color: #5AA897 !important;
 }
 
 /* ヘッダーのタイトル（緑のバー）は「薬剤師監修あり」のまま */
@@ -80,7 +80,7 @@ body {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background-color: #A8D5BA;  /* 淡い緑に変更 */
+    background-color: #333 !important; /* 文字色と統一 */
     border-radius: 50%;
     margin-right: 8px;
     vertical-align: middle;
@@ -90,7 +90,7 @@ body {
     display: inline-block;
     width: 14px;  /* 12px → 14px で見やすく */
     height: 14px;
-    background-color: #A8D5BA !important;  /* 優しいグリーン */
+    background-color: #333 !important; /* 文字色と統一 */
     border-radius: 50%;
     margin-right: 10px; /* 余白を増やしてテキストとのバランスを取る */
     vertical-align: middle;
@@ -119,9 +119,34 @@ body {
         font-weight: bold;
         color: white !important;
         text-decoration: none;
-        background-color: #7ABF80; /* ヘッダーの色と統一 */
+        background-color: #5AA897 !important;
         padding: 5px 10px;
         border-radius: 5px;
         margin-right: 10px;
     }
+}
+
+/* 🟢 サイドメニューの文字色も濃くする */
+.md-sidebar {
+    color: #333 !important;
+}
+
+/* 🟢 サイドバーのリンクの色を濃く */
+.md-nav__link {
+    color: #2A4D40 !important; /* ほんのり濃い緑 */
+}
+
+/* 🟢 フォーム（プルダウンメニュー）の枠線を濃く */
+select {
+    border: 1px solid #5AA897 !important;
+}
+
+/* 🟢 行間を調整 */
+body {
+    line-height: 1.6 !important; /* デフォルトより少し詰める */
+}
+
+/* 🟢 見出しの行間をさらに詰める */
+h2, h3 {
+    margin-bottom: 4px !important; /* 見出しの下の余白を縮める */
 }

@@ -10,153 +10,230 @@
             max-width: 600px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #e7f3f1; /* 目に優しい淡いグリーン */
+            color: #333; /* 柔らかいグレー */
         }
         h1, h2 {
             text-align: center;
+            color: #005a5b; /* 深い緑 */
         }
-        .question {
-            margin-bottom: 15px;
+        .question-box {
+            background-color: #fdfdfd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 90, 91, 0.2); /* 軽い影 */
+            border-left: 5px solid #3a9d9b; /* ポイントカラー */
+        }
+        .question p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            margin-top: 8px;
+        }
+        .options label {
+            display: block;
+            padding: 12px;
+            background-color: #dff5f4; /* 優しいブルー */
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+        .options label:hover {
+            background-color: #b2e1de; /* 選択時の柔らかい変化 */
+        }
+        .options input {
+            display: none;
+        }
+        .options input:checked + label {
+            background-color: #80ccc9; /* 選択時の強調 */
+            font-weight: bold;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #008c8a; /* ボタンのアクセントカラー */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #006d6c;
         }
         .result {
+            display: none;
+            text-align: center;
             margin-top: 20px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .info {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #eef;
-            border-radius: 5px;
+            padding: 15px;
+            background-color: #f7fdfc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 90, 91, 0.2);
         }
         .highlight {
-            color: blue;
+            font-size: 24px;
             font-weight: bold;
-            cursor: pointer;
+            color: #007a78;
         }
+
+        a {
+            text-decoration: none; /* リンクの下線を消す */
+        }
+
     </style>
 </head>
 <body>
+
     <h1>HIT-6 頭痛評価テスト</h1>
     
-    <div class="info">
+    <div class="question-box">
         <h2>あなたの頭痛、大丈夫？</h2>
         <p>頭痛が続くと、仕事や日常生活に影響が出ることも…！HIT-6テストで、あなたの頭痛がどのくらい日常に影響しているかをチェックしましょう！</p>
     </div>
-    
-    <form id="hit6Form">
-        <div class="question">
-            <p>1. 頭が痛いとき、ひどい痛みが出るのはどれくらいの頻度ですか？</p>
-            <label><input type="radio" name="q1" value="6"> まったくない</label>
-            <label><input type="radio" name="q1" value="8"> めったにない</label>
-            <label><input type="radio" name="q1" value="10"> ときどきある</label>
-            <label><input type="radio" name="q1" value="11"> よくある</label>
-            <label><input type="radio" name="q1" value="13"> 常にある</label>
-        </div>
-        <div class="question">
-            <p>2. 頭痛のせいで、日常生活に支障が出ることがありますか？（例えば、家事、仕事、学校生活、人付き合いなど）</p>
-            <label><input type="radio" name="q2" value="6"> まったくない</label>
-            <label><input type="radio" name="q2" value="8"> めったにない</label>
-            <label><input type="radio" name="q2" value="10"> ときどきある</label>
-            <label><input type="radio" name="q2" value="11"> よくある</label>
-            <label><input type="radio" name="q2" value="13"> 常にある</label>
-        </div>
-        <div class="question">
-            <p>3. 頭が痛いとき、横になりたくなることがありますか？</p>
-            <label><input type="radio" name="q3" value="6"> まったくない</label>
-            <label><input type="radio" name="q3" value="8"> めったにない</label>
-            <label><input type="radio" name="q3" value="10"> ときどきある</label>
-            <label><input type="radio" name="q3" value="11"> よくある</label>
-            <label><input type="radio" name="q3" value="13"> 常にある</label>
-        </div>
-        <div class="question">
-            <p>4. この4週間に、頭痛のせいで疲れてしまって、仕事やいつもの活動ができないことがありましたか？</p>
-            <label><input type="radio" name="q4" value="6"> まったくない</label>
-            <label><input type="radio" name="q4" value="8"> めったにない</label>
-            <label><input type="radio" name="q4" value="10"> ときどきある</label>
-            <label><input type="radio" name="q4" value="11"> よくある</label>
-            <label><input type="radio" name="q4" value="13"> 常にある</label>
-        </div>
-        <div class="question">
-            <p>5. この4週間に、頭痛のせいで、うんざりしたりいらいらしたりしたことがありましたか？</p>
-            <label><input type="radio" name="q5" value="6"> まったくない</label>
-            <label><input type="radio" name="q5" value="8"> めったにない</label>
-            <label><input type="radio" name="q5" value="10"> ときどきある</label>
-            <label><input type="radio" name="q5" value="11"> よくある</label>
-            <label><input type="radio" name="q5" value="13"> 常にある</label>
-        </div>
-        <div class="question">
-            <p>6. この4週間に、頭痛のせいで、仕事や日常生活の場で集中できないことがありましたか？</p>
-            <label><input type="radio" name="q6" value="6"> まったくない</label>
-            <label><input type="radio" name="q6" value="8"> めったにない</label>
-            <label><input type="radio" name="q6" value="10"> ときどきある</label>
-            <label><input type="radio" name="q6" value="11"> よくある</label>
-            <label><input type="radio" name="q6" value="13"> 常にある</label>
-        </div>
-        <button type="button" onclick="calculateHIT6()">測定する</button>
-    </form>
-            
-            <div id="result" class="result" style="display:none;"></div>
-            
-            <script>
-                function calculateHIT6() {
-                    let totalScore = 0;
-                    let allAnswered = true;
-                    
-                    for (let i = 1; i <= 6; i++) {
-                        const selected = document.querySelector(`input[name=q${i}]:checked`);
-                        if (selected) {
-                            totalScore += parseInt(selected.value);
-                        } else {
-                            allAnswered = false;
-                        }
-                    }
-                    
-                    if (!allAnswered) {
-                        alert("すべての質問に回答してください！");
-                        return;
-                    }
-                    
-                    let message = "";
-                    if (totalScore >= 60) {
-                        message = "重大な影響があります。専門医の受診を検討しましょう。";
-                    } else if (totalScore >= 56) {
-                        message = "かなりの影響があります。適切なケアを心がけましょう。";
-                    } else if (totalScore >= 50) {
-                        message = "中程度の影響があります。適切な対策を取りましょう。";
-                    } else {
-                        message = "生活習慣の見直しをおすすめします。";
-                    }
-                    
-                    document.getElementById("result").innerHTML = `<h2>HIT-6 スコア: ${totalScore}</h2><p>${message}</p>`;
-                    document.getElementById("result").style.display = "block";
-                }
-            </script>
 
-    <table id="scoreTable" style="display:none;">
-        <tr>
-            <th>スコア範囲</th>
-            <th>診断結果</th>
-        </tr>
-        <tr>
-            <td>60以上</td>
-            <td>頭痛が生活に大きな影響を与えています。専門医への相談をおすすめします。</td>
-        </tr>
-        <tr>
-            <td>56〜59</td>
-            <td>頭痛が頻繁に生活を妨げています。医師に相談し、適切なケアを検討しましょう。</td>
-        </tr>
-        <tr>
-            <td>50〜55</td>
-            <td>中程度の影響があります。次回診察時に医師と相談しましょう。</td>
-        </tr>
-        <tr>
-            <td>49以下</td>
-            <td>今のところ大きな問題はありませんが、定期的なチェックをおすすめします。</td>
-        </tr>
-    </table>
-        </body>
-        </html>
+    <form id="hit6Form">
+        <!-- 質問 1〜6 -->
+        <div class="question-box">
+            <p>1. 頭が痛いとき、ひどい痛みが出るのはどれくらいの頻度ですか？</p>
+            <div class="options">
+                <input type="radio" id="q1_1" name="q1" value="6"><label for="q1_1">まったくない</label>
+                <input type="radio" id="q1_2" name="q1" value="8"><label for="q1_2">めったにない</label>
+                <input type="radio" id="q1_3" name="q1" value="10"><label for="q1_3">ときどきある</label>
+                <input type="radio" id="q1_4" name="q1" value="11"><label for="q1_4">よくある</label>
+                <input type="radio" id="q1_5" name="q1" value="13"><label for="q1_5">常にある</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p>2. 頭痛のせいで、日常生活に支障が出ることがありますか？（例えば､ 家事､ 仕事､ 学校生活､ 人付き合いなど）</p>
+            <div class="options">
+                <input type="radio" id="q2_1" name="q2" value="6"><label for="q2_1">まったくない</label>
+                <input type="radio" id="q2_2" name="q2" value="8"><label for="q2_2">めったにない</label>
+                <input type="radio" id="q2_3" name="q2" value="10"><label for="q2_3">ときどきある</label>
+                <input type="radio" id="q2_4" name="q2" value="11"><label for="q2_4">よくある</label>
+                <input type="radio" id="q2_5" name="q2" value="13"><label for="q2_5">常にある</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p>3. 頭が痛いとき､ 横になりたくなることがありますか？</p>
+            <div class="options">
+                <input type="radio" id="q3_1" name="q3" value="6"><label for="q3_1">まったくない</label>
+                <input type="radio" id="q3_2" name="q3" value="8"><label for="q3_2">めったにない</label>
+                <input type="radio" id="q3_3" name="q3" value="10"><label for="q3_3">ときどきある</label>
+                <input type="radio" id="q3_4" name="q3" value="11"><label for="q3_4">よくある</label>
+                <input type="radio" id="q3_5" name="q3" value="13"><label for="q3_5">常にある</label>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <p>4. この4週間に､ 頭痛のせいで疲れてしまって､ 仕事やいつもの活動ができないことがありましたか？</p>
+            <div class="options">
+                <input type="radio" id="q4_1" name="q4" value="6"><label for="q4_1">まったくない</label>
+                <input type="radio" id="q4_2" name="q4" value="8"><label for="q4_2">めったにない</label>
+                <input type="radio" id="q4_3" name="q4" value="10"><label for="q4_3">ときどきある</label>
+                <input type="radio" id="q4_4" name="q4" value="11"><label for="q4_4">よくある</label>
+                <input type="radio" id="q4_5" name="q4" value="13"><label for="q4_5">常にある</label>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <p>5. この4週間に､ 頭痛のせいで､ うんざりしたりいらいらしたりしたことがありましたか？</p>
+            <div class="options">
+                <input type="radio" id="q5_1" name="q5" value="6"><label for="q5_1">まったくない</label>
+                <input type="radio" id="q5_2" name="q5" value="8"><label for="q5_2">めったにない</label>
+                <input type="radio" id="q5_3" name="q5" value="10"><label for="q5_3">ときどきある</label>
+                <input type="radio" id="q5_4" name="q5" value="11"><label for="q5_4">よくある</label>
+                <input type="radio" id="q5_5" name="q5" value="13"><label for="q5_5">常にある</label>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <p>6. この4週間に､ 頭痛のせいで､ 仕事や日常生活の場で集中できないことがありましたか？</p>
+            <div class="options">
+                <input type="radio" id="q6_1" name="q6" value="6"><label for="q6_1">まったくない</label>
+                <input type="radio" id="q6_2" name="q6" value="8"><label for="q6_2">めったにない</label>
+                <input type="radio" id="q6_3" name="q6" value="10"><label for="q6_3">ときどきある</label>
+                <input type="radio" id="q6_4" name="q6" value="11"><label for="q6_4">よくある</label>
+                <input type="radio" id="q6_5" name="q6" value="13"><label for="q6_5">常にある</label>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <button type="button" id="calculateBtn" class="button">測定する</button>
+        </div>
+    </form>
+    
+    <div id="result" class="result" style="display: none;">
+        <p>スコア: <span id="score"></span></p>
+        <p id="message"></p>
+    </div>
+    
+    <script>
+    document.getElementById("calculateBtn").addEventListener("click", function(event) {
+        event.preventDefault();  // フォームの送信を防ぐ
+        calculateHIT6();
+    });
+
+    document.getElementById("homeBtn").addEventListener("click", function() {
+            window.location.href = "index.html"; // ホームのURLに変更
+        });
+
+    function calculateHIT6() {
+        let totalScore = 0;
+        let allAnswered = true;
+    
+        for (let i = 1; i <= 6; i++) {
+            const selected = document.querySelector(`input[name=q${i}]:checked`);
+            if (selected) {
+                totalScore += parseInt(selected.value);
+                localStorage.setItem(`q${i}`, selected.value); // 選択肢を保存
+            } else {
+                allAnswered = false;
+            }
+        }
+    
+        if (!allAnswered) {
+            alert("すべての質問に回答してください！");
+            return;
+        }
+    
+        let message = totalScore >= 60 ? "頭痛が日常生活に重大な影響を与えています。<br>👉 <a href='doctors/when_to_see_specialist'>専門病院への受診</a>をみる。" :
+                    totalScore >= 56 ? "頭痛が日常生活にかなりの影響を与えています。<br>👉 <a href='doctors/when_to_see_specialist'>専門病院への受診</a>をみる。" :
+                    totalScore >= 50 ? "頭痛が日常生活にある程度の影響を与えています。<br>👉 <a href='doctors/when_to_see_specialist'>専門病院への受診</a>をみる。<br>👉 <a href='treatment/lifestyle'>生活習慣改善ガイド</a>をみる。" :
+                    '現状では、頭痛が日常生活にほとんど影響を与えていません。<br>👉 <a href="treatment/lifestyle">生活習慣改善ガイド</a>をみる。';
+    
+        document.getElementById("score").innerText = totalScore;
+        document.getElementById("message").innerHTML = message;
+        document.getElementById("result").style.display = "block";  // 結果を表示する
+    }
+
+    // ページ読み込み時に選択肢を復元
+    window.onload = function() {
+        for (let i = 1; i <= 6; i++) {
+            let savedValue = localStorage.getItem(`q${i}`);
+            if (savedValue) {
+                document.querySelector(`input[name=q${i}][value='${savedValue}']`).checked = true;
+            }
+        }
+    };
+    </script>
+
+    <div style="text-align: center; margin-top: 10px;">
+        👉 <a href="test/hit6" class="link"><span>HIT-6の詳しい説明をみる</span></a>
+    </div>
+
+</body>
+</html>
+
         

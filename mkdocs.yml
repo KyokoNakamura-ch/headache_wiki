@@ -53,6 +53,9 @@ nav:
   - 研究・エビデンス:
       - ガイドライン: research/guidelines.md
       - 頭痛関連のおすすめ書籍: research/recommended_books.md
+  - 指標: 
+      - HIT-6: test/hit6.md
+      - その他の指標（準備中）: test/coming_soon.md
   - 頭痛関連ニュース（準備中）: news.md
   - よくある質問: faq.md
   - お問合せ: inquiry.md

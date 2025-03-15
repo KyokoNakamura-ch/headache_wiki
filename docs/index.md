@@ -1,13 +1,12 @@
-# 頭痛Wiki（β版）
+# **頭痛Wiki（β版）**
 
-## お悩みの内容を選んでください
-
-### <span class="new-dot"></span> 頭痛の傾向を知る
+## 頭痛を知る
 あなたの頭痛を知ることで、頭痛を楽にしたくないですか？
 
-👉 [あなたの頭痛の傾向をチェックする](./headache_test.html)
+👉 [あなたの頭痛の傾向をチェック](./headache_test.html)<br>
+👉 [あなたの頭痛の影響度をチェック](hit6_test.html)
 
-### <span class="new-dot"></span> 症状・原因
+## 症状・原因
 あなたの頭痛の症状や原因を知ることで、適切な対処法が見つかるかもしれません。
 
 <select id="headache-symptoms" onchange="navigateToPage(this.value)">
@@ -24,7 +23,7 @@
     <option value="./symptoms/coffee_headache">コーヒーによる頭痛（飲みすぎ・急にやめると痛む）</option>
 </select>
 
-### <span class="new-dot"></span> 専門医・病院
+## 専門医・病院
 <select id="doctor-select" onchange="navigateToPage(this.value)">
     <option value="">選択してください</option>
     <option value="./doctors/find_doctor">頭痛外来・脳神経内科の探し方</option>
